@@ -7,8 +7,7 @@
 
 import UIKit
 
-class FifthViewController: BaseViewController {
-
+class FifthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,14 +17,6 @@ class FifthViewController: BaseViewController {
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {
-//        guard
-//            let count = self.navigationController?.viewControllers.count
-//        else {
-//            return
-//        }
-        
-//        self.navigationController?.viewControllers.removeSubrange(1...count - 1)
-        
         self.navigationController?.popToRootViewController(animated: true)
     }
 }

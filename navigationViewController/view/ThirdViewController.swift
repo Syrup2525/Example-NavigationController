@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ThirdViewController: BaseViewController {
+class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

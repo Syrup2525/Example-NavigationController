@@ -7,11 +7,9 @@
 
 import UIKit
 
-class FirstViewController: BaseViewController {
+class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     @IBAction func onClickClearTop(_ sender: UIButton) {
@@ -23,12 +21,4 @@ class FirstViewController: BaseViewController {
     }
 }
 
-extension BaseViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if let count = self.navigationController?.viewControllers.count, count > 1 {
-            return true
-        } else {
-            return false
-        }
-    }
-}
+
