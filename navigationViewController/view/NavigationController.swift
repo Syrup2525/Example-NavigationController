@@ -14,7 +14,7 @@ class NavigationController: UINavigationController {
         self.isNavigationBarHidden = true
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
-        self.viewControllers = [ViewController.FirstViewController.get()]
+        self.viewControllers = [ViewController.RootViewController.get()]
     }
 }
 

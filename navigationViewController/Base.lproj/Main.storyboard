@@ -12,7 +12,7 @@
         <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="RootViewController" customModule="navigationViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="RootViewController" customModule="navigationViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="914" y="4"/>
         </scene>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="9Dv-RM-ZhZ">
             <objects>
-                <viewController id="Mib-pT-yFA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mib-pT-yFA" customClass="FirstViewController" customModule="navigationViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rkc-ti-uzq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,6 +124,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Go Second"/>
                                 <connections>
                                     <action selector="onClickButton:" destination="QwK-gp-vkL" eventType="touchUpInside" id="2xi-1s-aoa"/>
+                                    <action selector="onClickButton:" destination="Mib-pT-yFA" eventType="touchUpInside" id="iRX-ls-kD2"/>
                                 </connections>
                             </button>
                         </subviews>
