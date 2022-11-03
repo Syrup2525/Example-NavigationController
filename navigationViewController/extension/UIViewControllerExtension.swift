@@ -12,7 +12,7 @@ extension UIViewController {
     func startViewController(_ viewController: ViewController, animated: Bool = true, option: StartViewControllerOption? = nil) {
         switch option {
         case .clearTop:
-            self.navigationController?.viewControllers = [viewController.get()]
+            self.navigationController?.setViewControllers([viewController.get()], animated: animated)
             break
             
         default:
