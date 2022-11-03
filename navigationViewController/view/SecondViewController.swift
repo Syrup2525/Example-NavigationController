@@ -12,10 +12,6 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func onClickBack(_ sender: UIButton) {
-        finish()
-    }
-    
     @IBAction func onClickButton(_ sender: UIButton) {
         startViewController(.ThirdViewController)
     }

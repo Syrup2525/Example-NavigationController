@@ -12,14 +12,6 @@ class FourthViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func onClickBack(_ sender: UIButton) {
-        finish()
-    }
-    
-    @IBAction func onClickReturnSecond(_ sender: UIButton) {
-        finish(option: .popToViewController, specifiedViewController: .SecondViewController)
-    }
-    
     @IBAction func onClickButton(_ sender: UIButton) {
         startViewController(.FifthViewController, option: .clearTop)
     }
