@@ -22,6 +22,7 @@
 		397EBF6829124E9700753D33 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF6729124E9700753D33 /* BaseViewController.swift */; };
 		39F99F42291257F50009AA98 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F99F41291257F50009AA98 /* NavigationController.swift */; };
 		39F99F45291263500009AA98 /* FinishOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F99F44291263500009AA98 /* FinishOption.swift */; };
+		39F99F4A291354DC0009AA98 /* StartViewControllerOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F99F49291354DC0009AA98 /* StartViewControllerOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		397EBF6729124E9700753D33 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		39F99F41291257F50009AA98 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		39F99F44291263500009AA98 /* FinishOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishOption.swift; sourceTree = "<group>"; };
+		39F99F49291354DC0009AA98 /* StartViewControllerOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewControllerOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				397EBF622912461000753D33 /* ViewController.swift */,
 				39F99F44291263500009AA98 /* FinishOption.swift */,
+				39F99F49291354DC0009AA98 /* StartViewControllerOption.swift */,
 			);
 			path = enum;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				397EBF5E291244EB00753D33 /* FourthViewController.swift in Sources */,
 				39F99F42291257F50009AA98 /* NavigationController.swift in Sources */,
 				397EBF5A291244D500753D33 /* SecondViewController.swift in Sources */,
+				39F99F4A291354DC0009AA98 /* StartViewControllerOption.swift in Sources */,
 				397EBF482912413600753D33 /* FirstViewController.swift in Sources */,
 				397EBF5C291244E000753D33 /* ThirdViewController.swift in Sources */,
 				397EBF632912461000753D33 /* ViewController.swift in Sources */,

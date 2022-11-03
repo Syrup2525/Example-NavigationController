@@ -46,6 +46,17 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85a-kz-2gW">
+                                <rect key="frame" x="0.0" y="680" width="390" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="CMc-FU-maW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Clear Top"/>
+                                <connections>
+                                    <action selector="onClickClearTop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jMz-km-Eh5"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvU-q8-7at">
                                 <rect key="frame" x="18" y="736" width="354" height="56"/>
                                 <constraints>
@@ -63,12 +74,15 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pvU-q8-7at" secondAttribute="trailing" constant="18" id="3wH-OT-cej"/>
                             <constraint firstItem="B7R-ZD-0t5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8El-z8-NSs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="85a-kz-2gW" secondAttribute="trailing" id="8bO-3w-aWp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pvU-q8-7at" secondAttribute="bottom" constant="18" id="Hbw-ke-eq1"/>
                             <constraint firstItem="B7R-ZD-0t5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KxT-E0-cgF"/>
                             <constraint firstItem="B7R-ZD-0t5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OZZ-Iq-V7g"/>
                             <constraint firstItem="pvU-q8-7at" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="OrU-c4-vsk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B7R-ZD-0t5" secondAttribute="trailing" id="X6l-gm-ZZR"/>
                             <constraint firstItem="B7R-ZD-0t5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qR7-L5-W87"/>
+                            <constraint firstItem="pvU-q8-7at" firstAttribute="top" secondItem="85a-kz-2gW" secondAttribute="bottom" id="uAL-Q7-dos"/>
+                            <constraint firstItem="85a-kz-2gW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vJL-qD-6vr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WiS-mh-ECj"/>

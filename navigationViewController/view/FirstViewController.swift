@@ -14,6 +14,10 @@ class FirstViewController: BaseViewController {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
+    @IBAction func onClickClearTop(_ sender: UIButton) {
+        startViewController(.SecondViewController, option: .clearTop)
+    }
+    
     @IBAction func onClickButton(_ sender: UIButton) {
         startViewController(.SecondViewController)
     }

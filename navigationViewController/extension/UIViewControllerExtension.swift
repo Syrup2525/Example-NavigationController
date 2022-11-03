@@ -9,14 +9,23 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func startViewController(_ viewController: ViewController, animated: Bool = true) {
-        self.navigationController?.pushViewController(viewController.get(), animated: animated)
+    func startViewController(_ viewController: ViewController, animated: Bool = true, option: StartViewControllerOption? = nil) {
+        switch option {
+        case .clearTop:
+            self.navigationController?.viewControllers = [viewController.get()]
+            break
+            
+        default:
+            self.navigationController?.pushViewController(viewController.get(), animated: animated)
+            break
+        }
     }
     
     func finish(_ animated: Bool = true, option: FinishOption = .popViewController, specifiedViewController: ViewController? = nil) {
         switch option {
         case .popViewController:
             self.navigationController?.popViewController(animated: animated)
+            break
             
         case .popToViewController:
             guard
@@ -30,9 +39,11 @@ extension UIViewController {
                     self.navigationController?.popToViewController(item, animated: animated)
                 }
             }
+            break
             
         case .popToRootViewController:
             self.navigationController?.popToRootViewController(animated: animated)
+            break
         }
     }
 }
