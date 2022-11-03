@@ -31,7 +31,9 @@ enum ViewController: String {
                 .FourthViewController,
                 .FifthViewController:
             let storyboard = StoryBoard.Main.get()
-            return storyboard.instantiateViewController(withIdentifier: self.rawValue)
+            let viewController = storyboard.instantiateViewController(withIdentifier: self.rawValue)
+            
+            return viewController
         }
     }
 }

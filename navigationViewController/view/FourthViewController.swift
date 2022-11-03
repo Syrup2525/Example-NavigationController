@@ -17,6 +17,10 @@ class FourthViewController: BaseViewController {
         finish()
     }
     
+    @IBAction func onClickReturnSecond(_ sender: UIButton) {
+        finish(option: .popToViewController, specifiedViewController: .SecondViewController)
+    }
+    
     @IBAction func onClickButton(_ sender: UIButton) {
         startViewController(.FifthViewController)
     }

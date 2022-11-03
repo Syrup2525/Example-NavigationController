@@ -17,10 +17,11 @@
 		397EBF5C291244E000753D33 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF5B291244E000753D33 /* ThirdViewController.swift */; };
 		397EBF5E291244EB00753D33 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF5D291244EB00753D33 /* FourthViewController.swift */; };
 		397EBF60291244F700753D33 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF5F291244F700753D33 /* FifthViewController.swift */; };
-		397EBF632912461000753D33 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF622912461000753D33 /* ViewControllerType.swift */; };
+		397EBF632912461000753D33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF622912461000753D33 /* ViewController.swift */; };
 		397EBF6629124ACF00753D33 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF6529124ACF00753D33 /* UIViewControllerExtension.swift */; };
 		397EBF6829124E9700753D33 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF6729124E9700753D33 /* BaseViewController.swift */; };
 		39F99F42291257F50009AA98 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F99F41291257F50009AA98 /* NavigationController.swift */; };
+		39F99F45291263500009AA98 /* FinishOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F99F44291263500009AA98 /* FinishOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +37,11 @@
 		397EBF5B291244E000753D33 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		397EBF5D291244EB00753D33 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		397EBF5F291244F700753D33 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
-		397EBF622912461000753D33 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
+		397EBF622912461000753D33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		397EBF6529124ACF00753D33 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		397EBF6729124E9700753D33 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		39F99F41291257F50009AA98 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		39F99F44291263500009AA98 /* FinishOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +112,8 @@
 		397EBF61291245F200753D33 /* enum */ = {
 			isa = PBXGroup;
 			children = (
-				397EBF622912461000753D33 /* ViewControllerType.swift */,
+				397EBF622912461000753D33 /* ViewController.swift */,
+				39F99F44291263500009AA98 /* FinishOption.swift */,
 			);
 			path = enum;
 			sourceTree = "<group>";
@@ -194,12 +197,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39F99F45291263500009AA98 /* FinishOption.swift in Sources */,
 				397EBF5E291244EB00753D33 /* FourthViewController.swift in Sources */,
 				39F99F42291257F50009AA98 /* NavigationController.swift in Sources */,
 				397EBF5A291244D500753D33 /* SecondViewController.swift in Sources */,
 				397EBF482912413600753D33 /* FirstViewController.swift in Sources */,
 				397EBF5C291244E000753D33 /* ThirdViewController.swift in Sources */,
-				397EBF632912461000753D33 /* ViewControllerType.swift in Sources */,
+				397EBF632912461000753D33 /* ViewController.swift in Sources */,
 				397EBF6829124E9700753D33 /* BaseViewController.swift in Sources */,
 				397EBF442912413600753D33 /* AppDelegate.swift in Sources */,
 				397EBF6629124ACF00753D33 /* UIViewControllerExtension.swift in Sources */,
