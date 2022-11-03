@@ -17,6 +17,7 @@ private enum StoryBoard: String {
 }
 
 enum ViewController: String {
+    case RootViewController = "RootViewController"
     case FirstViewController = "FirstViewController"
     case SecondViewController = "SecondViewController"
     case ThirdViewController = "ThirdViewController"
@@ -25,7 +26,8 @@ enum ViewController: String {
     
     func get() -> UIViewController {
         switch self {
-        case .FirstViewController,
+        case .RootViewController,
+                .FirstViewController,
                 .SecondViewController,
                 .ThirdViewController,
                 .FourthViewController,

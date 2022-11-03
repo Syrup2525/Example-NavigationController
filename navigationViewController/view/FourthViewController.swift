@@ -21,6 +21,6 @@ class FourthViewController: UIViewController {
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {
-        startViewController(.FifthViewController)
+        startViewController(.FifthViewController, option: .clearTop)
     }
 }
