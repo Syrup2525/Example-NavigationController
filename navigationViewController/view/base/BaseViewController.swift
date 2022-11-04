@@ -10,28 +10,24 @@ import UIKit
 class BaseViewController: UIViewController {
     final var backButton: UIButton?
     
+    final private var requestCode: Int?
+    final private var reverseRequestCode: Int?
+    final private var resultCode: ResultCode?
+    final private var resultData: [String:Any]?
+    private var senderData: [String:Any]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createBackButton()
-        
-        self.navigationController?.interactivePopGestureRecognizer?.addTarget(self, action: #selector(handleBackswipe))
+        initBackButton()
     }
     
     /// 뒤로가기 버튼 생성
-    final private func createBackButton() {
+    final private func initBackButton() {
         guard
             let count = navigationController?.viewControllers.count
         else {
             return
-        }
-        
-        if let viewControllers = navigationController?.viewControllers {
-            print("")
-            
-            for viewController in viewControllers {
-                print("\(type(of: viewController))")
-            }
         }
         
         if count > 2 {
@@ -60,20 +56,67 @@ class BaseViewController: UIViewController {
         }
     }
     
-    /// 뒤로가기 제스쳐 콜백
-    @objc private func handleBackswipe() {
-        self.navigationController?.interactivePopGestureRecognizer?.removeTarget(self, action: #selector(handleBackswipe))
-        
-        onBackPressed(false)
-    }
-    
     @objc func onClickBackButton(_ sender: UIButton) {
-        onBackPressed()
+        onBackPress()
     }
     
-    func onBackPressed(_ isFinish: Bool = true) {
-        if isFinish {
-            finish()
+    func onBackPress() {
+        finish()
+    }
+    
+    final func finish(_ animated: Bool = true, option: FinishOption = .popViewController, specifiedViewController: ViewController? = nil) {
+        guard
+            let rootViewController = UIApplication.shared.windows.first?.rootViewController
+        else {
+            return
         }
+        
+        /// 현재 보여지는 뷰가 navigationController 인 경우
+        if let navigationController = rootViewController as? UINavigationController {
+            // onViewControllerResult 실행
+            let viewControllers = navigationController.viewControllers
+            let count = viewControllers.count - 2
+            let previousViewController = viewControllers[count]
+            
+            if let previousViewController = previousViewController as? OnViewControllerResult {
+                previousViewController.onViewControllerResult(requestCode: requestCode, resultCode: resultCode, data: resultData)
+            }
+            
+            // pop 실행
+            switch option {
+            case .popViewController:
+                navigationController.popViewController(animated: animated)
+                break
+                
+            case .popToViewController:
+                let viewControllerStack = navigationController.viewControllers
+                
+                for item in viewControllerStack {
+                    if "\(type(of: item))" == specifiedViewController?.rawValue {
+                        navigationController.popToViewController(item, animated: animated)
+                    }
+                }
+                break
+                
+            case .popToRootViewController:
+                navigationController.popToRootViewController(animated: animated)
+                break
+            }
+        }
+        
+        /// 현재 보여지는 뷰가 presentedViewController 인 경우
+        if let presentedViewController = rootViewController.presentedViewController {
+            // dismiss 실행 후 onViewControllerResult 실행
+            presentedViewController.dismiss(animated: animated) {
+                if let viewController = presentedViewController as? OnViewControllerResult {
+                    viewController.onViewControllerResult(requestCode: self.requestCode, resultCode: self.resultCode, data: self.resultData)
+                }
+            }
+        }
+    }
+    
+    final func setResult(resultCode: ResultCode, data: [String:Any]? = nil) {
+        self.resultCode = resultCode
+        self.resultData = data
     }
 }

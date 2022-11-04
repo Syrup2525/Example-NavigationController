@@ -15,4 +15,19 @@ class SecondViewController: BaseViewController {
     @IBAction func onClickButton(_ sender: UIButton) {
         startViewController(.ThirdViewController)
     }
+    
+    @IBAction func finishResultOk(_ sender: UIButton) {
+        setResult(resultCode: .RESULT_OK)
+        finish()
+    }
+    
+    @IBAction func finishResultFail(_ sender: UIButton) {
+        setResult(resultCode: .RESULT_FAIL)
+        finish()
+    }
+    
+    override func onBackPress() {
+        setResult(resultCode: .RESULT_CANCEL)
+        finish()
+    }
 }
