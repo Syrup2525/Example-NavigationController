@@ -136,6 +136,4 @@ class BaseViewController: UIViewController {
         self.resultCode = resultCode
         self.resultData = data
     }
-    
-    // TODO: 이전 뷰 컨트롤러를 다운캐스팅 하여 가져오는 메서드가 필요할듯
 }
