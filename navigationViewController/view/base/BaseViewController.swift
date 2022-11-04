@@ -56,7 +56,7 @@ class BaseViewController: UIViewController {
         }
     }
     
-    @objc func onClickBackButton(_ sender: UIButton) {
+    @objc private func onClickBackButton(_ sender: UIButton) {
         onBackPress()
     }
     
