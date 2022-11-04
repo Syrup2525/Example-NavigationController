@@ -65,11 +65,7 @@ class BaseViewController: UIViewController {
     }
     
     final func finish(_ animated: Bool = true, option: FinishOption = .popViewController, specifiedViewController: ViewController? = nil) {
-        guard
-            let rootViewController = UIApplication.shared.windows.first?.rootViewController
-        else {
-            return
-        }
+        guard let rootViewController = UIApplication.shared.windows.first?.rootViewController else { return }
         
         /// 현재 보여지는 뷰가 navigationController 인 경우
         if let navigationController = rootViewController as? UINavigationController {
