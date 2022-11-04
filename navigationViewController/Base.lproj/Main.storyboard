@@ -46,13 +46,14 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvU-q8-7at">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvU-q8-7at">
                                 <rect key="frame" x="18" y="736" width="354" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="LX4-ZB-KAD"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Go First"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Go First"/>
                                 <connections>
                                     <action selector="onClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rzs-v7-e1i"/>
                                 </connections>
@@ -115,13 +116,14 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Rl-X16">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Rl-X16">
                                 <rect key="frame" x="18" y="736" width="354" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="b6b-Eu-LFI"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Go Second"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Go Second"/>
                                 <connections>
                                     <action selector="onClickButton:" destination="QwK-gp-vkL" eventType="touchUpInside" id="2xi-1s-aoa"/>
                                     <action selector="onClickButton:" destination="Mib-pT-yFA" eventType="touchUpInside" id="iRX-ls-kD2"/>
@@ -192,40 +194,43 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dlc-zf-7Uw">
-                                <rect key="frame" x="18" y="366" width="354" height="112"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dlc-zf-7Uw">
+                                <rect key="frame" x="18" y="362" width="354" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ef-93-3Sw">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ef-93-3Sw">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="56"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="msX-sO-tP9"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="finish (.RESULT_OK)"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="finish (.RESULT_OK)"/>
                                         <connections>
                                             <action selector="finishResultOk:" destination="QwK-gp-vkL" eventType="touchUpInside" id="Wsb-NB-8oL"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wan-FL-ggA">
-                                        <rect key="frame" x="0.0" y="56" width="354" height="56"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wan-FL-ggA">
+                                        <rect key="frame" x="0.0" y="64" width="354" height="56"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="kTD-cK-9mx"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="finish (.RESULT_FAIL)"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="finish (.RESULT_FAIL)"/>
                                         <connections>
                                             <action selector="finishResultFail:" destination="QwK-gp-vkL" eventType="touchUpInside" id="f5c-4Z-7hA"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCM-3k-5wX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCM-3k-5wX">
                                 <rect key="frame" x="18" y="736" width="354" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="iot-A8-BGT"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Go Third"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Go Third"/>
                                 <connections>
                                     <action selector="onClickButton:" destination="QwK-gp-vkL" eventType="touchUpInside" id="Wbj-Op-baN"/>
                                 </connections>
@@ -290,24 +295,26 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WD-dd-ihc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WD-dd-ihc">
                                 <rect key="frame" x="18" y="736" width="354" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Kbm-KL-D0w"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Go Fourth"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Go Fourth"/>
                                 <connections>
                                     <action selector="onClickButton:" destination="Fbk-tv-KM0" eventType="touchUpInside" id="L01-31-Pem"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r6-bO-tNS">
-                                <rect key="frame" x="0.0" y="680" width="390" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r6-bO-tNS">
+                                <rect key="frame" x="18" y="672" width="354" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="xxx-iW-Opu"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Go Fourth and clear top"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Go Fourth and clear top"/>
                                 <connections>
                                     <action selector="onClickClearTop:" destination="Fbk-tv-KM0" eventType="touchUpInside" id="opA-6f-NiN"/>
                                 </connections>
@@ -317,11 +324,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="q99-Sk-vFs" firstAttribute="trailing" secondItem="GjZ-YT-37e" secondAttribute="trailing" id="1s2-YP-HGE"/>
-                            <constraint firstAttribute="trailing" secondItem="9r6-bO-tNS" secondAttribute="trailing" id="2bA-CX-PwX"/>
-                            <constraint firstItem="7WD-dd-ihc" firstAttribute="top" secondItem="9r6-bO-tNS" secondAttribute="bottom" id="3P6-Sx-LTX"/>
+                            <constraint firstAttribute="trailing" secondItem="9r6-bO-tNS" secondAttribute="trailing" constant="18" id="2bA-CX-PwX"/>
+                            <constraint firstItem="7WD-dd-ihc" firstAttribute="top" secondItem="9r6-bO-tNS" secondAttribute="bottom" constant="8" id="3P6-Sx-LTX"/>
                             <constraint firstItem="q99-Sk-vFs" firstAttribute="leading" secondItem="GjZ-YT-37e" secondAttribute="leading" id="F8N-1X-IDc"/>
                             <constraint firstItem="GjZ-YT-37e" firstAttribute="bottom" secondItem="7WD-dd-ihc" secondAttribute="bottom" constant="18" id="FDQ-gp-nCI"/>
-                            <constraint firstItem="9r6-bO-tNS" firstAttribute="leading" secondItem="GjZ-YT-37e" secondAttribute="leading" id="TaO-aO-MLb"/>
+                            <constraint firstItem="9r6-bO-tNS" firstAttribute="leading" secondItem="GjZ-YT-37e" secondAttribute="leading" constant="18" id="TaO-aO-MLb"/>
                             <constraint firstItem="7WD-dd-ihc" firstAttribute="leading" secondItem="GjZ-YT-37e" secondAttribute="leading" constant="18" id="bo0-HE-hgJ"/>
                             <constraint firstItem="q99-Sk-vFs" firstAttribute="top" secondItem="GjZ-YT-37e" secondAttribute="top" id="n62-Vo-4fx"/>
                             <constraint firstItem="GjZ-YT-37e" firstAttribute="trailing" secondItem="7WD-dd-ihc" secondAttribute="trailing" constant="18" id="teF-Tg-wlD"/>
@@ -371,13 +378,14 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slq-9Z-Gyv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slq-9Z-Gyv">
                                 <rect key="frame" x="18" y="736" width="354" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="JRR-IM-s3F"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Go Fifth"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Go Fifth"/>
                                 <connections>
                                     <action selector="onClickButton:" destination="fcN-L8-bHf" eventType="touchUpInside" id="UCQ-Vz-Z1c"/>
                                 </connections>
@@ -438,13 +446,14 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTs-1u-cV8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTs-1u-cV8">
                                 <rect key="frame" x="18" y="736" width="354" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Nyw-rB-JeF"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Return Root"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Return Root"/>
                                 <connections>
                                     <action selector="onClickButton:" destination="eWb-Y5-uem" eventType="touchUpInside" id="6sm-Zm-buI"/>
                                 </connections>
@@ -487,6 +496,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
