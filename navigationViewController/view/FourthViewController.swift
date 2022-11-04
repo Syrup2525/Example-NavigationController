@@ -12,7 +12,11 @@ class FourthViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func onClickButton(_ sender: UIButton) {
+    @IBAction func onClickSixthButton(_ sender: UIButton) {
+        startViewController(.SixthViewController)
+    }
+    
+    @IBAction func onClickFifthButton(_ sender: UIButton) {
         startViewController(.FifthViewController)
     }
 }

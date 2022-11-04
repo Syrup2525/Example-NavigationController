@@ -64,6 +64,27 @@ class BaseViewController: UIViewController {
         finish()
     }
     
+    final func startViewController(_ viewController: ViewController,
+                                   animated: Bool = true,
+                                   option: StartViewControllerOption? = nil,
+                                   requestCode: Int? = nil) {
+        self.requestCode = requestCode
+        
+        switch option {
+        case .clearTop:
+            var object = [String:Any]()
+            object.updateValue(viewController, forKey: "viewController")
+            object.updateValue(animated, forKey: "animated")
+            
+            NotificationCenter.default.post(name: .viewControllerClearTop, object: object, userInfo: nil)
+            break
+            
+        default:
+            self.navigationController?.pushViewController(viewController.get(), animated: animated)
+            break
+        }
+    }
+    
     final func finish(_ animated: Bool = true, option: FinishOption = .popViewController, specifiedViewController: ViewController? = nil) {
         guard let rootViewController = UIApplication.shared.windows.first?.rootViewController else { return }
         
@@ -115,4 +136,6 @@ class BaseViewController: UIViewController {
         self.resultCode = resultCode
         self.resultData = data
     }
+    
+    // TODO: 이전 뷰 컨트롤러를 다운캐스팅 하여 가져오는 메서드가 필요할듯
 }
