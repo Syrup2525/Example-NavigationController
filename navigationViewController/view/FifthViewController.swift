@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FifthViewController: UIViewController {
+class FifthViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

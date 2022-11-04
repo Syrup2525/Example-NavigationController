@@ -7,9 +7,13 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func onClickClearTop(_ sender: UIButton) {
+        startViewController(.FourthViewController, option: .clearTop)
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {

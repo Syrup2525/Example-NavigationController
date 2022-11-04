@@ -12,18 +12,7 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         
         self.isNavigationBarHidden = true
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         self.viewControllers = [ViewController.RootViewController.get()]
-    }
-}
-
-extension NavigationController: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if let count = self.navigationController?.viewControllers.count, count > 1 {
-            return true
-        } else {
-            return false
-        }
     }
 }

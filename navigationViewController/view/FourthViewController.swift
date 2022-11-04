@@ -7,12 +7,12 @@
 
 import UIKit
 
-class FourthViewController: UIViewController {
+class FourthViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {
-        startViewController(.FifthViewController, option: .clearTop)
+        startViewController(.FifthViewController)
     }
 }

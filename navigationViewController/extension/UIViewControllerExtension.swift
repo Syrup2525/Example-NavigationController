@@ -12,9 +12,11 @@ extension UIViewController {
     func startViewController(_ viewController: ViewController, animated: Bool = true, option: StartViewControllerOption? = nil) {
         switch option {
         case .clearTop:
-            guard let root = self.navigationController?.viewControllers.first else { return }
+            var object = [String:Any]()
+            object.updateValue(viewController, forKey: "viewController")
+            object.updateValue(animated, forKey: "animated")
             
-            self.navigationController?.setViewControllers([root, viewController.get()], animated: animated)
+            NotificationCenter.default.post(name: .viewControllerClearTop, object: object, userInfo: nil)
             break
             
         default:
