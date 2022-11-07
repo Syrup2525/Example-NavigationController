@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hB1-id-WV7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hB1-id-WV7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -385,10 +385,7 @@
                                     <constraint firstAttribute="height" constant="56" id="lpS-EX-RRB"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Go Sixth"/>
-                                <connections>
-                                    <action selector="onClickSixthButton:" destination="fcN-L8-bHf" eventType="touchUpInside" id="fvu-OY-51O"/>
-                                </connections>
+                                <state key="normal" title="Present"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slq-9Z-Gyv">
                                 <rect key="frame" x="18" y="736" width="354" height="56"/>
@@ -398,9 +395,6 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Go Fifth"/>
-                                <connections>
-                                    <action selector="onClickButton:" destination="fcN-L8-bHf" eventType="touchUpInside" id="UCQ-Vz-Z1c"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OTD-ql-IkG"/>
@@ -424,10 +418,10 @@
             </objects>
             <point key="canvasLocation" x="1642" y="778"/>
         </scene>
-        <!--Sixth View Controller-->
+        <!--Present View Controller-->
         <scene sceneID="f43-nT-pMq">
             <objects>
-                <viewController storyboardIdentifier="SixthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9RZ-HB-HBU" customClass="SixthViewController" customModule="navigationViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PresentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9RZ-HB-HBU" customClass="PresentViewController" customModule="navigationViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lze-RW-jHu">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -438,8 +432,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDA-35-quE">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sixth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvF-nA-cHp">
-                                                <rect key="frame" x="173" y="14.333333333333337" width="44.333333333333343" height="21.666666666666671"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Present" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvF-nA-cHp">
+                                                <rect key="frame" x="161.66666666666666" y="14.333333333333337" width="67" height="21.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -461,13 +455,29 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9V-Vl-C3C">
+                                <rect key="frame" x="18" y="736" width="354" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="qvT-75-fg1"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Finish"/>
+                                <connections>
+                                    <action selector="onClickButton:" destination="eWb-Y5-uem" eventType="touchUpInside" id="eac-ev-tcX"/>
+                                    <action selector="onClickFinish:" destination="9RZ-HB-HBU" eventType="touchUpInside" id="Rel-j0-iCD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YoG-HG-6iw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dqd-UF-fTo" firstAttribute="trailing" secondItem="YoG-HG-6iw" secondAttribute="trailing" id="AuT-BC-SPG"/>
+                            <constraint firstItem="S9V-Vl-C3C" firstAttribute="leading" secondItem="YoG-HG-6iw" secondAttribute="leading" constant="18" id="IKt-uT-VZY"/>
+                            <constraint firstItem="YoG-HG-6iw" firstAttribute="trailing" secondItem="S9V-Vl-C3C" secondAttribute="trailing" constant="18" id="JXp-PT-vmw"/>
                             <constraint firstItem="dqd-UF-fTo" firstAttribute="top" secondItem="YoG-HG-6iw" secondAttribute="top" id="Kd1-aE-jta"/>
                             <constraint firstItem="dqd-UF-fTo" firstAttribute="leading" secondItem="YoG-HG-6iw" secondAttribute="leading" id="Xkd-Vi-xfF"/>
+                            <constraint firstItem="YoG-HG-6iw" firstAttribute="bottom" secondItem="S9V-Vl-C3C" secondAttribute="bottom" constant="18" id="d3y-E7-kph"/>
                         </constraints>
                     </view>
                 </viewController>

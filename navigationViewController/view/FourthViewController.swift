@@ -12,8 +12,8 @@ class FourthViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func onClickSixthButton(_ sender: UIButton) {
-        startViewController(.SixthViewController)
+    @IBAction func onClickPresentButton(_ sender: UIButton) {
+        startViewController(.PresentViewController)
     }
     
     @IBAction func onClickFifthButton(_ sender: UIButton) {

@@ -23,7 +23,7 @@ enum ViewController: String {
     case ThirdViewController = "ThirdViewController"
     case FourthViewController = "FourthViewController"
     case FifthViewController = "FifthViewController"
-    case SixthViewController = "SixthViewController"
+    case PresentViewController = "PresentViewController"
     
     func get() -> UIViewController {
         switch self {
@@ -33,7 +33,7 @@ enum ViewController: String {
                 .ThirdViewController,
                 .FourthViewController,
                 .FifthViewController,
-                .SixthViewController:
+                .PresentViewController:
             let storyboard = StoryBoard.Main.get()
             let viewController = storyboard.instantiateViewController(withIdentifier: self.rawValue)
             
