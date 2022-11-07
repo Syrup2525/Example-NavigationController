@@ -10,11 +10,11 @@ import UIKit
 class BaseViewController: UIViewController {
     final var backButton: UIButton?
     
-    final private var requestCode: Int?
-    final private var reverseRequestCode: Int?
-    final private var resultCode: ResultCode?
-    final private var resultData: [String:Any]?
-    private var senderData: [String:Any]?
+    final var requestData: [String:Any]?
+    final var requestCode: Int?
+    final var resultCode: ResultCode?
+    final var resultData: [String:Any]?
+    final var onViewControllerResult: ((Int?, ResultCode?, [String:Any]?) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,17 +66,27 @@ class BaseViewController: UIViewController {
     
     final func startViewController(_ viewController: ViewController,
                                    animated: Bool = true,
-                                   option: StartViewControllerOption? = nil,
-                                   requestCode: Int? = nil) {
-        self.requestCode = requestCode
-        
+                                   option: StartViewControllerOption? = nil) {
         switch option {
         case .clearTop:
             var object = [String:Any]()
             object.updateValue(viewController, forKey: "viewController")
             object.updateValue(animated, forKey: "animated")
             
+            if let requestData = requestData {
+                object.updateValue(requestData, forKey: "requestData")
+            }
+            
             NotificationCenter.default.post(name: .viewControllerClearTop, object: object, userInfo: nil)
+            break
+            
+        case .present:
+            if let viewController = viewController.get() as? BaseViewController {
+                viewController.requestData = requestData
+                self.present(viewController, animated: animated)
+            } else {
+                self.present(viewController.get(), animated: animated)
+            }
             break
             
         default:
@@ -86,18 +96,20 @@ class BaseViewController: UIViewController {
     }
     
     final func finish(_ animated: Bool = true, option: FinishOption = .popViewController, specifiedViewController: ViewController? = nil) {
-        guard let rootViewController = UIApplication.shared.windows.first?.rootViewController else { return }
+        guard
+            let previousViewController = Util.getPreviousViewController(viewController: self) as? BaseViewController
+        else {
+            return
+        }
         
-        /// 현재 보여지는 뷰가 navigationController 인 경우
-        if let navigationController = rootViewController as? UINavigationController {
-            // onViewControllerResult 실행
-            let viewControllers = navigationController.viewControllers
-            let count = viewControllers.count - 2
-            let previousViewController = viewControllers[count]
+        let viewControllerType = Util.getVisibleViewControllerType(viewController: self)
+        
+        switch viewControllerType {
+        case .navigationViewController:
+            let requestCode = previousViewController.requestCode
+            previousViewController.onViewControllerResult?(requestCode, resultCode, resultData)
             
-            if let previousViewController = previousViewController as? OnViewControllerResult {
-                previousViewController.onViewControllerResult(requestCode: requestCode, resultCode: resultCode, data: resultData)
-            }
+            guard let navigationController = previousViewController.navigationController else { return }
             
             // pop 실행
             switch option {
@@ -119,21 +131,18 @@ class BaseViewController: UIViewController {
                 navigationController.popToRootViewController(animated: animated)
                 break
             }
-        }
-        
-        /// 현재 보여지는 뷰가 presentedViewController 인 경우
-        if let presentedViewController = rootViewController.presentedViewController {
-            // dismiss 실행 후 onViewControllerResult 실행
-            presentedViewController.dismiss(animated: animated) {
-                if let viewController = presentedViewController as? OnViewControllerResult {
-                    viewController.onViewControllerResult(requestCode: self.requestCode, resultCode: self.resultCode, data: self.resultData)
-                }
+            break
+            
+        case .viewController:
+            self.dismiss(animated: animated) {
+                let requestCode = previousViewController.requestCode
+                previousViewController.onViewControllerResult?(requestCode, self.resultCode, self.resultData)
             }
+            break
         }
     }
     
-    final func setResult(resultCode: ResultCode, data: [String:Any]? = nil) {
-        self.resultCode = resultCode
-        self.resultData = data
+    final func setOnViewControllerResult(onViewControllerResult: ((Int?, ResultCode?, [String:Any]?) -> ())?) {
+        self.onViewControllerResult = onViewControllerResult
     }
 }

@@ -17,17 +17,17 @@ class SecondViewController: BaseViewController {
     }
     
     @IBAction func finishResultOk(_ sender: UIButton) {
-        setResult(resultCode: .RESULT_OK)
+        resultCode = .RESULT_OK
         finish()
     }
     
     @IBAction func finishResultFail(_ sender: UIButton) {
-        setResult(resultCode: .RESULT_FAIL)
+        resultCode = .RESULT_FAIL
         finish()
     }
     
     override func onBackPress() {
-        setResult(resultCode: .RESULT_CANCEL)
+        resultCode = .RESULT_CANCEL
         finish()
     }
 }

@@ -9,4 +9,5 @@ import Foundation
 
 enum StartViewControllerOption {
     case clearTop
+    case present
 }

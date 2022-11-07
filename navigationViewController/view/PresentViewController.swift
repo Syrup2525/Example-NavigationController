@@ -12,6 +12,10 @@ class PresentViewController: BaseViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func onClickSecondPresent(_ sender: UIButton) {
+        startViewController(.SecondPresentViewController, option: .present)
+    }
+    
     @IBAction func onClickFinish(_ sender: UIButton) {
         finish()
     }

@@ -31,7 +31,15 @@ class RootViewController: BaseViewController {
         }
         
         self.navigationController?.popToRootViewController(animated: false)
-        self.navigationController?.pushViewController(viewController.get(), animated: animated)
+        
+        if let viewController = viewController.get() as? BaseViewController {
+            let requestData = object["requestData"] as? [String:Any]
+            viewController.requestData = requestData
+            
+            self.navigationController?.pushViewController(viewController, animated: animated)
+        } else {
+            self.navigationController?.pushViewController(viewController.get(), animated: animated)
+        }
     }
 }
 
@@ -52,21 +60,14 @@ extension RootViewController: UINavigationControllerDelegate {
                 // 뒤로가기 제스쳐중 뒤로가기를 취소한 경우 (화면을 옆으로 밀다 만 경우)
                 if context.isCancelled { return }
                 
-                guard let rootViewController = UIApplication.shared.windows.first?.rootViewController else { return }
-                
-                /* 현재 보여지고 있는 viewController 찾기 */
-                var viewController: OnViewControllerResult?
-                
-                // 현재 보이는 viewController 가 UINavigationController 인 경우
-                if let navigationController = rootViewController as? UINavigationController {
-                    viewController = navigationController.visibleViewController as? OnViewControllerResult
-                // 현재 보이는 viewController 가 presentedViewController 인 경우
-                } else if let presentedViewController = rootViewController.presentedViewController {
-                    viewController = presentedViewController as? OnViewControllerResult
+                guard
+                    let viewController = navigationController.visibleViewController as? BaseViewController
+                else {
+                    return
                 }
                 
-                // 현재 보여지는 viewController onBack closure 실행
-                viewController?.onViewControllerResult(requestCode: nil, resultCode: .RESULT_CANCEL, data: nil)
+                let requestCode = viewController.requestCode
+                viewController.onViewControllerResult?(requestCode, .RESULT_CANCEL, nil)
             })
         }
     }
