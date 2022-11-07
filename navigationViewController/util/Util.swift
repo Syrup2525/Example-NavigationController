@@ -11,6 +11,7 @@ import UIKit
 class Util {
     /// 이전 뷰 컨트롤러 찾기
     public static func getPreviousViewController(viewController: UIViewController) -> UIViewController? {
+        // TODO: presentingViewController 검사해서 navigation, page 같은 특수가 아닌 일반 viewController 인 경우 바로 리턴 필요
         guard
             let rootViewController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController
         else {
