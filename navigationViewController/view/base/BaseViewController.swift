@@ -97,14 +97,12 @@ class BaseViewController: UIViewController {
     
     final func finish(_ animated: Bool = true, option: FinishOption = .popViewController, specifiedViewController: ViewController? = nil) {
         guard
-            let previousViewController = Util.getPreviousViewController(viewController: self) as? BaseViewController
+            let previousViewController = getPreviousViewController() as? BaseViewController
         else {
             return
         }
         
-        let viewControllerType = Util.getVisibleViewControllerType(viewController: self)
-        
-        switch viewControllerType {
+        switch getVisibleViewControllerType() {
         case .navigationViewController:
             let requestCode = previousViewController.requestCode
             previousViewController.onViewControllerResult?(requestCode, resultCode, resultData)
@@ -138,6 +136,9 @@ class BaseViewController: UIViewController {
                 let requestCode = previousViewController.requestCode
                 previousViewController.onViewControllerResult?(requestCode, self.resultCode, self.resultData)
             }
+            break
+            
+        case .pageViewController:
             break
         }
     }

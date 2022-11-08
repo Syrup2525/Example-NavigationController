@@ -10,5 +10,5 @@ import Foundation
 enum ViewControllerType {
     case navigationViewController
     case viewController
-//    case pageViewController
+    case pageViewController
 }
