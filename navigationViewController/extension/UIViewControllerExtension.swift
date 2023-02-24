@@ -45,15 +45,16 @@ extension UIViewController {
     
     /// 현재 뷰컨트롤러 타입 찾기
     func getCurrentViewControllerType(currentViewController: UIViewController) -> ViewControllerType {
-        var viewController = currentViewController.parent
+        // 최상위 부모 뷰 컨트롤러
+        var finalParentViewController = currentViewController
         
-        while let v = viewController?.parent {  // viewController?.parent 가 nil 이 될때까지 탐색
-            viewController = v
+        while let v = finalParentViewController.parent {  // v 가 nil 이 될때까지 탐색 (부모 뷰 컨트롤러가 없을때 까지 탐색)
+            finalParentViewController = v   // v 는 nil 이 아님
         }
         
-        if viewController is UINavigationController {
+        if finalParentViewController is UINavigationController {
             return .navigationController
-        } else if viewController is UIPageViewController {
+        } else if finalParentViewController is UIPageViewController {
             return .pageViewController
         } else {
             return .viewController
