@@ -1,6 +1,6 @@
 //
 //  Application.swift
-//  navigationViewController
+//  navigationController
 //
 //  Created by 김경환 on 2023/02/24.
 //

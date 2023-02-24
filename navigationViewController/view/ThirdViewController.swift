@@ -1,6 +1,6 @@
 //
 //  ThirdViewController.swift
-//  navigationViewController
+//  navigationController
 //
 //  Created by 김경환 on 2022/11/02.
 //
