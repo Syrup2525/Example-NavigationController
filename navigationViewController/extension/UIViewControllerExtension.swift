@@ -27,7 +27,7 @@ extension UIViewController {
             }
         // presentingViewController 가 존재하지 않는다면 현재 뷰컨트롤러가 최상위 뷰 컨트롤러
         } else {
-            // MARK: rootViewController 가 navigationViewController 라고 가정, 아닐 경우 추가 로직 필요
+            // MARK: rootViewController 가 navigationController 라고 가정, 아닐 경우 추가 로직 필요
             guard
                 let rootViewController = UIApplication.shared.windows.first?.rootViewController,
                 let navigationController = rootViewController as? UINavigationController
@@ -63,7 +63,7 @@ extension UIViewController {
         }
         
         if lastViewController is UINavigationController {
-            return .navigationViewController
+            return .navigationController
         } else if lastViewController is UIPageViewController {
             return .pageViewController
         } else {
