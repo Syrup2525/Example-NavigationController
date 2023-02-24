@@ -44,27 +44,16 @@ extension UIViewController {
     }
     
     /// 현재 뷰컨트롤러 타입 찾기
-    func getCurrentViewControllerType() -> ViewControllerType {
-        guard
-            let rootViewController = UIApplication.shared.windows.first?.rootViewController
-        else {
-            return .viewController
+    func getCurrentViewControllerType(currentViewController: UIViewController) -> ViewControllerType {
+        var viewController = currentViewController.parent
+        
+        while let v = viewController?.parent {  // viewController?.parent 가 nil 이 될때까지 탐색
+            viewController = v
         }
         
-        var lastViewController: UIViewController? = rootViewController
-        
-        // 마지막으로 presentedViewController 된 viewController 탐색
-        if let viewController = rootViewController.presentedViewController {
-            lastViewController = viewController
-            
-            while lastViewController != nil {
-                lastViewController = lastViewController?.presentedViewController
-            }
-        }
-        
-        if lastViewController is UINavigationController {
+        if viewController is UINavigationController {
             return .navigationController
-        } else if lastViewController is UIPageViewController {
+        } else if viewController is UIPageViewController {
             return .pageViewController
         } else {
             return .viewController

@@ -118,7 +118,7 @@ class BaseViewController: UIViewController {
             return
         }
         
-        switch getCurrentViewControllerType() {     // 현재 보여지고 있는 뷰 컨트롤러 타입이
+        switch getCurrentViewControllerType(currentViewController: self) {     // 현재 보여지고 있는 뷰 컨트롤러 타입이
         case .navigationController: // 네비게이션 뷰 컨틀로러인 경우
             let requestCode = previousViewController.requestCode
             previousViewController.onViewControllerResult?(requestCode, resultCode, resultData)
