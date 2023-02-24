@@ -30,12 +30,14 @@ extension UIViewController {
             // MARK: rootViewController 가 navigationViewController 라고 가정, 아닐 경우 추가 로직 필요
             guard
                 let rootViewController = UIApplication.shared.windows.first?.rootViewController,
-                let navigationViewController = rootViewController as? UINavigationController
+                let navigationController = rootViewController as? UINavigationController
             else {
                 return nil
             }
             
-            viewController = navigationViewController.viewControllers.last
+            let count = navigationController.viewControllers.count - 2
+            
+            viewController = navigationController.viewControllers[count]
         }
         
         return viewController

@@ -147,7 +147,7 @@ class BaseViewController: UIViewController {
             }
             break
             
-        case .viewController, .pageViewController:
+        default:
             self.dismiss(animated: animated) {
                 let requestCode = previousViewController.requestCode
                 previousViewController.onViewControllerResult?(requestCode, self.resultCode, self.resultData)
@@ -175,5 +175,7 @@ class BaseViewController: UIViewController {
     }
     
     /// dismiss 메서드 사용 금지 (finish 메서드를 사용하도록 유도)
-    final override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) { }
+    final override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag, completion: completion)
+    }
 }

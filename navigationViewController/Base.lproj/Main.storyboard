@@ -46,28 +46,13 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvU-q8-7at">
-                                <rect key="frame" x="18" y="736" width="354" height="56"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="LX4-ZB-KAD"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Go First"/>
-                                <connections>
-                                    <action selector="onClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rzs-v7-e1i"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pvU-q8-7at" secondAttribute="trailing" constant="18" id="3wH-OT-cej"/>
                             <constraint firstItem="B7R-ZD-0t5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8El-z8-NSs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pvU-q8-7at" secondAttribute="bottom" constant="18" id="Hbw-ke-eq1"/>
                             <constraint firstItem="B7R-ZD-0t5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KxT-E0-cgF"/>
                             <constraint firstItem="B7R-ZD-0t5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OZZ-Iq-V7g"/>
-                            <constraint firstItem="pvU-q8-7at" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="OrU-c4-vsk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B7R-ZD-0t5" secondAttribute="trailing" id="X6l-gm-ZZR"/>
                             <constraint firstItem="B7R-ZD-0t5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qR7-L5-W87"/>
                         </constraints>

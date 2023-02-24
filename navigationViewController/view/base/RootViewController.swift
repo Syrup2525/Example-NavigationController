@@ -18,10 +18,24 @@ class RootViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(clearTop(_:)), name: .viewControllerClearTop, object: nil)
     }
     
-    @IBAction func onClickButton(_ sender: UIButton) {
-        startViewController(.FirstViewController, option: .push)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        processSplash()
     }
     
+    private func processSplash() {
+        showIndicator()
+        
+        // 실제 네트워크 통신 대신 지연시간 적용
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+            self.dismissIndicator()
+            
+            self.startViewController(.FirstViewController, option: .push)
+        }
+    }
+    
+    /// 현재 뷰 컨틀롤러 (Root) 를 제외하고 모든 뷰 컨트롤러 삭제 후, viewController push
     @objc func clearTop(_ notification: Notification) {
         guard
             let object = notification.object as? [String:Any],
