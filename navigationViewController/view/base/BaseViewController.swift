@@ -102,7 +102,7 @@ class BaseViewController: UIViewController {
             return
         }
         
-        switch getVisibleViewControllerType() {
+        switch getCurrentViewControllerType() {
         case .navigationViewController:
             let requestCode = previousViewController.requestCode
             previousViewController.onViewControllerResult?(requestCode, resultCode, resultData)

@@ -40,7 +40,7 @@ extension UIViewController {
         }
     }
     
-    func getVisibleViewControllerType() -> ViewControllerType {
+    func getCurrentViewControllerType() -> ViewControllerType {
         guard
             let rootViewController = UIApplication.shared.windows.first?.rootViewController
         else {
