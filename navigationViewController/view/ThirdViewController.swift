@@ -17,6 +17,6 @@ class ThirdViewController: BaseViewController {
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {
-        startViewController(.FourthViewController)
+        startViewController(.FourthViewController, option: .push)
     }
 }

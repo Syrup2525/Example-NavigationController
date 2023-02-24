@@ -13,7 +13,7 @@ class SecondViewController: BaseViewController {
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {
-        startViewController(.ThirdViewController)
+        startViewController(.ThirdViewController, option: .push)
     }
     
     @IBAction func finishResultOk(_ sender: UIButton) {

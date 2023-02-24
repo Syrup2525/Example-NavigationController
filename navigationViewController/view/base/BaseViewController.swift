@@ -8,6 +8,8 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    final private var indicator: UIActivityIndicatorView!
+    
     final var backButton: UIButton?
     
     final var requestData: [String:Any]?
@@ -20,6 +22,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         initBackButton()
+        initIndicator()
     }
     
     /// 뒤로가기 버튼 생성
@@ -30,7 +33,7 @@ class BaseViewController: UIViewController {
             return
         }
         
-        if count > 2 {
+        if count > Application.NAVIGATION_START_INDEX + 1 {
             let backButton = UIButton()
             self.view.addSubview(backButton)
             
@@ -56,6 +59,17 @@ class BaseViewController: UIViewController {
         }
     }
     
+    final private func initIndicator() {
+        indicator = UIActivityIndicatorView()
+        indicator.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        indicator.backgroundColor = .clear
+        indicator.hidesWhenStopped = false
+        indicator.style = .large
+        indicator.startAnimating()
+        self.view.addSubview(indicator)
+        indicator.isHidden = true
+    }
+    
     @objc private func onClickBackButton(_ sender: UIButton) {
         onBackPress()
     }
@@ -64,9 +78,10 @@ class BaseViewController: UIViewController {
         finish()
     }
     
+    /// 다음 뷰 컨트롤러
     final func startViewController(_ viewController: ViewController,
                                    animated: Bool = true,
-                                   option: StartViewControllerOption? = nil) {
+                                   option: StartViewControllerOption) {
         switch option {
         case .clearTop:
             var object = [String:Any]()
@@ -83,27 +98,28 @@ class BaseViewController: UIViewController {
         case .present:
             if let viewController = viewController.get() as? BaseViewController {
                 viewController.requestData = requestData
+                
                 self.present(viewController, animated: animated)
             } else {
                 self.present(viewController.get(), animated: animated)
             }
             break
             
-        default:
+        case .push:
             self.navigationController?.pushViewController(viewController.get(), animated: animated)
             break
         }
     }
     
-    final func finish(_ animated: Bool = true, option: FinishOption = .popViewController, specifiedViewController: ViewController? = nil) {
+    final func finish(_ animated: Bool = true, option: NavigationControllerFinishOption = .popViewController, specifiedViewController: ViewController? = nil) {
         guard
             let previousViewController = getPreviousViewController() as? BaseViewController
         else {
             return
         }
         
-        switch getCurrentViewControllerType() {
-        case .navigationViewController:
+        switch getCurrentViewControllerType() {     // 현재 보여지고 있는 뷰 컨트롤러 타입이
+        case .navigationViewController: // 네비게이션 뷰 컨틀로러인 경우
             let requestCode = previousViewController.requestCode
             previousViewController.onViewControllerResult?(requestCode, resultCode, resultData)
             
@@ -131,14 +147,11 @@ class BaseViewController: UIViewController {
             }
             break
             
-        case .viewController:
+        case .viewController, .pageViewController:
             self.dismiss(animated: animated) {
                 let requestCode = previousViewController.requestCode
                 previousViewController.onViewControllerResult?(requestCode, self.resultCode, self.resultData)
             }
-            break
-            
-        case .pageViewController:
             break
         }
     }
@@ -146,4 +159,21 @@ class BaseViewController: UIViewController {
     final func setOnViewControllerResult(onViewControllerResult: ((Int?, ResultCode?, [String:Any]?) -> ())?) {
         self.onViewControllerResult = onViewControllerResult
     }
+    
+    final public func showIndicator(isBakcgroundVisible: Bool = true) {
+        if isBakcgroundVisible {
+            indicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)
+        } else {
+            indicator.backgroundColor = .clear
+        }
+        
+        indicator.isHidden = false
+    }
+    
+    final public func dismissIndicator() {
+        indicator.isHidden = true
+    }
+    
+    /// dismiss 메서드 사용 금지 (finish 메서드를 사용하도록 유도)
+    final override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) { }
 }

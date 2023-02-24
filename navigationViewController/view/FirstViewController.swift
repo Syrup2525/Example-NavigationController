@@ -47,6 +47,6 @@ class FirstViewController: BaseViewController {
     
     @IBAction func onClickButton(_ sender: UIButton) {
         self.requestCode = RequestCode.secondViewController.rawValue
-        startViewController(.SecondViewController)
+        startViewController(.SecondViewController, option: .push)
     }
 }

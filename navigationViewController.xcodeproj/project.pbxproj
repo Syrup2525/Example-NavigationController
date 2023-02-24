@@ -21,12 +21,13 @@
 		397EBF5E291244EB00753D33 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF5D291244EB00753D33 /* FourthViewController.swift */; };
 		397EBF60291244F700753D33 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF5F291244F700753D33 /* FifthViewController.swift */; };
 		397EBF632912461000753D33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EBF622912461000753D33 /* ViewController.swift */; };
+		39D1417729A848CF0030CF00 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1417629A848CF0030CF00 /* Application.swift */; };
 		39E428282918F28500C4F586 /* ViewControllerTyep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E428272918F28500C4F586 /* ViewControllerTyep.swift */; };
 		39F745A02913B809007FB8DB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7459F2913B809007FB8DB /* FirstViewController.swift */; };
 		39F745A22914B04A007FB8DB /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F745A12914B04A007FB8DB /* NSNotificationName.swift */; };
 		39F745A82914B236007FB8DB /* ResultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F745A72914B236007FB8DB /* ResultCode.swift */; };
 		39F99F42291257F50009AA98 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F99F41291257F50009AA98 /* NavigationController.swift */; };
-		39F99F45291263500009AA98 /* FinishOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F99F44291263500009AA98 /* FinishOption.swift */; };
+		39F99F45291263500009AA98 /* NavigationControllerFinishOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F99F44291263500009AA98 /* NavigationControllerFinishOption.swift */; };
 		39F99F4A291354DC0009AA98 /* StartViewControllerOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F99F49291354DC0009AA98 /* StartViewControllerOption.swift */; };
 		39F99F4C29138ED60009AA98 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F99F4B29138ED60009AA98 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
@@ -48,12 +49,13 @@
 		397EBF5D291244EB00753D33 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		397EBF5F291244F700753D33 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		397EBF622912461000753D33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		39D1417629A848CF0030CF00 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		39E428272918F28500C4F586 /* ViewControllerTyep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTyep.swift; sourceTree = "<group>"; };
 		39F7459F2913B809007FB8DB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		39F745A12914B04A007FB8DB /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		39F745A72914B236007FB8DB /* ResultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCode.swift; sourceTree = "<group>"; };
 		39F99F41291257F50009AA98 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		39F99F44291263500009AA98 /* FinishOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishOption.swift; sourceTree = "<group>"; };
+		39F99F44291263500009AA98 /* NavigationControllerFinishOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerFinishOption.swift; sourceTree = "<group>"; };
 		39F99F49291354DC0009AA98 /* StartViewControllerOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewControllerOption.swift; sourceTree = "<group>"; };
 		39F99F4B29138ED60009AA98 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				397EBF432912413600753D33 /* AppDelegate.swift */,
+				39D1417629A848CF0030CF00 /* Application.swift */,
 				397EBF452912413600753D33 /* SceneDelegate.swift */,
 			);
 			path = app;
@@ -127,7 +130,7 @@
 		397EBF61291245F200753D33 /* enum */ = {
 			isa = PBXGroup;
 			children = (
-				39F99F44291263500009AA98 /* FinishOption.swift */,
+				39F99F44291263500009AA98 /* NavigationControllerFinishOption.swift */,
 				39F745A72914B236007FB8DB /* ResultCode.swift */,
 				39F99F49291354DC0009AA98 /* StartViewControllerOption.swift */,
 				397EBF622912461000753D33 /* ViewController.swift */,
@@ -249,12 +252,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				397EBF442912413600753D33 /* AppDelegate.swift in Sources */,
+				39D1417729A848CF0030CF00 /* Application.swift in Sources */,
 				39F99F4C29138ED60009AA98 /* BaseViewController.swift in Sources */,
 				397EBF60291244F700753D33 /* FifthViewController.swift in Sources */,
-				39F99F45291263500009AA98 /* FinishOption.swift in Sources */,
 				39F745A02913B809007FB8DB /* FirstViewController.swift in Sources */,
 				397EBF5E291244EB00753D33 /* FourthViewController.swift in Sources */,
 				39F99F42291257F50009AA98 /* NavigationController.swift in Sources */,
+				39F99F45291263500009AA98 /* NavigationControllerFinishOption.swift in Sources */,
 				39F745A22914B04A007FB8DB /* NSNotificationName.swift in Sources */,
 				39340F26291507620069AE0E /* PresentViewController.swift in Sources */,
 				39F745A82914B236007FB8DB /* ResultCode.swift in Sources */,

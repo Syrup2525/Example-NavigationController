@@ -11,35 +11,37 @@ import UIKit
 extension UIViewController {
     /// 이전 뷰 컨트롤러 찾기
     func getPreviousViewController() -> UIViewController? {
+        var viewController: UIViewController?
+        
+        // presentingViewController 가 존재 한다면
         if let presentingViewController = self.presentingViewController {
+            // presentingViewController 가 UINavigationController 인 경우
             if let navigationController = presentingViewController as? UINavigationController {
-                return navigationController.viewControllers.last
+                viewController = navigationController.viewControllers.last
+            // presentingViewController 가 pageViewController 인 경우
             } else if let pageViewController = presentingViewController as? UIPageViewController {
-                return pageViewController.viewControllers?.first
+                viewController = pageViewController.viewControllers?.first
+            // MARK: TabViewController 사용시 추가 로직 필요
             } else {
-                return presentingViewController
+                viewController = presentingViewController
             }
+        // presentingViewController 가 존재하지 않는다면 현재 뷰컨트롤러가 최상위 뷰 컨트롤러
         } else {
+            // MARK: rootViewController 가 navigationViewController 라고 가정, 아닐 경우 추가 로직 필요
             guard
-                let rootViewController = UIApplication.shared.windows.first?.rootViewController
+                let rootViewController = UIApplication.shared.windows.first?.rootViewController,
+                let navigationViewController = rootViewController as? UINavigationController
             else {
                 return nil
             }
             
-            if let navigationViewController = rootViewController as? UINavigationController {
-                let count = navigationViewController.viewControllers.count
-                
-                if count > 1 {
-                    return navigationViewController.viewControllers[count - 2]
-                } else {
-                    return nil
-                }
-            }
-            
-            return nil
+            viewController = navigationViewController.viewControllers.last
         }
+        
+        return viewController
     }
     
+    /// 현재 뷰컨트롤러 타입 찾기
     func getCurrentViewControllerType() -> ViewControllerType {
         guard
             let rootViewController = UIApplication.shared.windows.first?.rootViewController

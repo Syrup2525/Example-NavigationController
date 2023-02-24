@@ -7,6 +7,7 @@
 
 import UIKit
 
+// NavigationController index 0 번째에 해당하는 뷰 컨트롤러
 class RootViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,7 @@ class RootViewController: BaseViewController {
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {
-        startViewController(.FirstViewController)
+        startViewController(.FirstViewController, option: .push)
     }
     
     @objc func clearTop(_ notification: Notification) {
@@ -44,8 +45,9 @@ class RootViewController: BaseViewController {
 }
 
 extension RootViewController: UIGestureRecognizerDelegate {
+    /// 뒤로가기 제스처 사용가능 여부
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if let count = self.navigationController?.viewControllers.count, count > 2 {
+        if let count = self.navigationController?.viewControllers.count, count > Application.NAVIGATION_START_INDEX + 1 {
             return true
         } else {
             return false
@@ -58,8 +60,11 @@ extension RootViewController: UINavigationControllerDelegate {
         if let coordinator = navigationController.topViewController?.transitionCoordinator {
             coordinator.notifyWhenInteractionChanges({ (context) in
                 // 뒤로가기 제스쳐중 뒤로가기를 취소한 경우 (화면을 옆으로 밀다 만 경우)
-                if context.isCancelled { return }
+                if context.isCancelled {
+                    return
+                }
                 
+                /* 뒤로가기 제스쳐 이벤트 */
                 guard
                     let viewController = navigationController.visibleViewController as? BaseViewController
                 else {

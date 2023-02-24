@@ -13,6 +13,6 @@ class FourthViewController: BaseViewController {
     }
     
     @IBAction func onClickFifthButton(_ sender: UIButton) {
-        startViewController(.FifthViewController)
+        startViewController(.FifthViewController, option: .push)
     }
 }
